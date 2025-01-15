@@ -7,7 +7,13 @@ class buah:
         
     def setwarna(self,item):
             self.warna = item
-        
+
+    def setnama(self,item):
+            self.nama = item
+            
+    def setrasa(self,item):
+
+            self.rasa = item
     def information(self):
             print( f"buah saya : {self.nama} berwarna :{self.warna} ber rasa :{self.rasa}")
 
