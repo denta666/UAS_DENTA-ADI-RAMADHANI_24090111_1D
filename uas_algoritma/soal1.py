@@ -1,24 +1,17 @@
-nim_list = []
-nama_list = []
+data_mahasiswa = []
 
-while True:
-    nim = input('Masukan NIM: ')
-    nama = input('Masukan Nama: ')
+def inputan():
+    nim = int(input('Masukan NIM    : '))
+    data_mahasiswa.append(nim)
+    nama = input('Masukan Nama  : ')
+    data_mahasiswa.append(nama)
+    
+inputan()
+tambah = input('ingin tambah lagi?(y/t) : ')
+if tambah == 'y':
+    inputan()
+else:
+        print('')
+    
 
-    nim_list.append(nim)
-    nama_list.append(nama)
-
-    for loop in range(1, 2):
-        print(loop)
-        if loop == 1:
-            print('NIM:', nim)
-            print('Nama:', nama)
-            print('Selesai')
-
-    lanjut = input('Apakah Anda ingin menambah data lagi? (y/n): ')
-    if lanjut.lower() != 'y':
-        break
-
-print('Data yang sudah dimasukkan:')
-for i in range(len(nim_list)):
-    print(f'NIM: {nim_list[i]}, Nama: {nama_list[i]}')
+print(data_mahasiswa)
