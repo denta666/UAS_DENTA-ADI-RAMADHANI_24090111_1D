@@ -1,12 +1,19 @@
-import numpy as np
+import pandas as pd
 
+data = pd.DataFrame([
+    [65,90,80],
+    [50,80,70],
+], columns=['Mahasiswa 1','Mahasiswa 2','Mahasiswa 3'], index=['algoritma dan struktur data 2','matematika numerik'])
+data['total_nilai'] = data.sum(axis=1)
+print('....')
+print(data)
 
-mahasiswa = np.array(['Mahasiswa 1', 'Mahasiswa 2', 'Mahasiswa 3'])
-algoritma_dan_struktur_data = np.array([90, 50, 80])
-matematika_numerik = np.array([80, 60, 70])
+df = pd.DataFrame(data)
 
-for i in range(len(mahasiswa)):
-    print(f'{mahasiswa[i]}:')
-    print(f'Nilai Algoritma dan Struktur Data: {algoritma_dan_struktur_data[i]}')
-    print(f'Nilai MTK Numerik: {matematika_numerik[i]}')
-    print()
+rata_rata_matkul = df.sum(axis=0)
+df['Rata-rata'] = df.sum(axis=1)
+
+print("Rata-rata nilai untuk setiap mata kuliah:")
+print(rata_rata_matkul)
+print("\nRata-rata nilai untuk setiap mahasiswa:")
+print(df['Rata-rata'])
